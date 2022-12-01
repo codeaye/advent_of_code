@@ -3,7 +3,7 @@ fn solution(text: &str) {
         .split("\n\n")
         .map(|f| {
             f.split("\n")
-                .map(|e| e.parse::<u32>().unwrap())
+                .map(|e| e.parse::<u32>().expect("Input is wrong."))
                 .sum::<u32>()
         })
         .collect();
