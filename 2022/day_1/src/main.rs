@@ -12,6 +12,21 @@ fn solution(text: &str) {
     println!("P1: {}\nP2: {}", c[0], c[0..3].iter().sum::<u32>());
 }
 
+pub static IN: &str = include_str!("./input.txt");
+
 fn main() {
-    solution(&include_str!("./input.txt"));
+    solution(&IN);
+}
+
+mod day_2_tests {
+    use crate::{solution, IN};
+    use std::time::Instant;
+
+    #[test]
+    pub fn bench() {
+        let start = Instant::now();
+        solution(&IN);
+        let elapsed = start.elapsed();
+        println!("Elapsed: {:?}", elapsed);
+    }
 }

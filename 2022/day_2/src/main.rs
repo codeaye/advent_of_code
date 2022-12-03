@@ -57,8 +57,22 @@ fn part_2(t: &str) -> u16 {
     })
 }
 
+pub static STR: &str = include_str!("input.txt");
+
 fn main() {
-    let str = include_str!("input.txt");
-    println!("P1 Total: {}", part_1(&str));
-    println!("P2 Total: {}", part_2(&str));
+    println!("P1 Total: {}", part_1(&STR));
+    println!("P2 Total: {}", part_2(&STR));
+}
+
+mod day_2_tests {
+    use crate::{part_1, part_2, STR};
+    use std::time::Instant;
+    #[test]
+    pub fn bench() {
+        let start = Instant::now();
+        part_1(&STR);
+        part_2(&STR);
+        let elapsed = start.elapsed();
+        println!("Elapsed: {:?}", elapsed);
+    }
 }
