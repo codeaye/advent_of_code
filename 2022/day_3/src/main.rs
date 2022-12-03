@@ -6,8 +6,7 @@ static ARR: [char; 52] = [
 
 fn part_1(t: &str) -> usize {
     t.lines().fold(0, |acc, f| {
-        let t = f.len() / 2;
-        let (a, b) = (&f[0..t], &f[t..]);
+        let (a, b) = f.split_at(f.len() / 2);
         for i in a.chars() {
             if b.contains(i) {
                 return acc + ARR.iter().position(|&x| x == i).unwrap() + 1;
