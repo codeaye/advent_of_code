@@ -3,7 +3,9 @@ members = [
     "2022/day_1",
     "2022/day_2",
     "2022/day_3",
-    "2022/day_4"
+    "2022/day_4",
+    "2022/day_5",
+    "2022/day_6"
 ]
 
 [profile.release]
